@@ -36,7 +36,7 @@ const styles = {
     color: 'white',
     flex: '1 0 auto',
     position: 'relative',
-    '&:after': {
+    '&::after': {
       content: "''",
       float: 'left',
       display: 'block',

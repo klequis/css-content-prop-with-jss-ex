@@ -8,7 +8,7 @@ I was making rows of squares using <code>::after</code> & the css <code>content<
 const styles = {
   box: {
     ...
-    '&:after': {
+    '&::after': {
       content=''
       ...
     }
@@ -21,7 +21,7 @@ However, things were not working and debugging showed **invalid property** for <
 const styles = {
   box: {
     ...
-    '&:after': {
+    '&::after': {
       content='""'
       ...
     }
