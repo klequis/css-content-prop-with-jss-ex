@@ -1,28 +1,57 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import injectSheet from "react-jss";
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+const App = ({ classes }) => {
+  return (
+    <div>
+      <div className={classes.row}>
+        <div className={classes.box}>
+          <div className={classes.inner}>1</div>
+        </div>
+        <div className={classes.box}>
+          <div className={classes.inner}>2</div>
+        </div>
+        <div className={classes.box}>
+          <div className={classes.inner}>3</div>
+        </div>
+        <div className={classes.box}>
+          <div className={classes.inner}>4</div>
+        </div>
+        <div className={classes.box}>
+          <div className={classes.inner}>5</div>
+        </div>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
-export default App;
+const styles = {
+  row: {
+    display: 'flex',
+  },
+  box: {
+    background: 'purple',
+    margin: 5,
+    fontWeight: 'bold',
+    color: 'white',
+    flex: '1 0 auto',
+    position: 'relative',
+    '&:after': {
+      content: "''",
+      float: 'left',
+      display: 'block',
+      paddingTop: '100%',
+    }
+  },
+  inner: {
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    bottom: 0,
+    top: 0,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+}
+export default injectSheet(styles)(App);
